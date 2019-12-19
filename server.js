@@ -9,7 +9,7 @@ server.use(express.json());
 server.use('/users', userRouter);
 
 server.use('/', (req, res) => {
-  res.send("It's alive!");
+  res.status(200).json({ api: 'up', dbenv: process.env.DB_ENV });
 });
 
 module.exports = server;
