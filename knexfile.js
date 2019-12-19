@@ -9,10 +9,10 @@ module.exports = {
     }
   },
   migrations: {
-    directory: './data/migrations'
+    directory: './migrations'
   },
   seeds: {
-    directory: './data/seeds'
+    directory: './seeds'
   },
   staging: {
     client: 'postgresql',
