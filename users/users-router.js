@@ -10,4 +10,14 @@ router.get('/', (req, res) => {
     .catch(err => console.log(err));
 });
 
+router.delete('/:id', (req, res) => {
+  const { id } = req.params;
+
+  Users.remove(id)
+    .then(id => {
+      res.status(200).json(id);
+    })
+    .catch(err => console.log(err));
+});
+
 module.exports = router;
