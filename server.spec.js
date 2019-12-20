@@ -17,5 +17,13 @@ describe('server.js', () => {
           expect(res.status).toBe(200);
         });
     });
+
+    it('should return a JSON object', () => {
+      return request(server)
+        .get('/')
+        .then(res => {
+          expect(res.type).toMatch(/json/i);
+        });
+    });
   });
 });
