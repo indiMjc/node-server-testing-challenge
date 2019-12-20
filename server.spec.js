@@ -25,5 +25,13 @@ describe('server.js', () => {
           expect(res.type).toMatch(/json/i);
         });
     });
+
+    it('should return { api: "up" }', () => {
+      return request(server)
+        .get('/')
+        .then(res => {
+          expect(res.body.api).toBe('up');
+        });
+    });
   });
 });
